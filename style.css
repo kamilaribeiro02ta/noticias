@@ -24,13 +24,14 @@ body {
 }
 
 body.escurecer::before {
+
      content: "";
      position: fixed;
      height: 100vh;
      width: 100%;
-     background-color: rgba(0, 0, 26, 0.5);
      top: 0;
      left: 0;
+     background-color: rgba(0, 0, 26, 0.5);
  }
 
 
@@ -39,6 +40,8 @@ header{
     justify-content: space-between;
     align-items: center;
     margin-bottom: 2rem;
+    max-width: 1110px;
+    margin-inline: auto;
 }
 
 
@@ -47,10 +50,18 @@ header button {
     border: none;
     background: none;
     width: fit-content;
+    margin-bottom: 4rem;
+    cursor: pointer;
+}
+
+header nav button {
+    margin-left: auto;
+    padding: 1.5rem;
 }
 
 
-header nav {
+header nav.mobile {
+
     position: fixed;
     background-color: var(--almost-white);
     right: -16rem;
@@ -58,6 +69,7 @@ header nav {
     height: 100vh;
     width: 16rem;
     z-index: 999;
+
     display: flex;
     flex-direction: column;
     padding: 1.5rem;
@@ -71,24 +83,26 @@ header nav.abrir {
 
 }
 
-header nav button { 
-    align-self: flex-end;
-    margin-bottom: 4rem;
+header .desktop {
+    display: none;
 }
 
-header nav a {
+header .mobile a {
     text-decoration: none;
     color: var(--dark-blue);
     font-size: 1.125rem;
     line-height: 1.5rem;
 }
 
+main {
+    max-width: 1110px;
+    margin-inline: auto;
+}
 
 
 .primeira-secao {
     margin-bottom: 4rem;
 }
-
 
 
 .primeira-secao img {
@@ -187,6 +201,9 @@ header nav a {
     line-height: 100%;
 }
 
+.terceira-secao h2 a {
+    text-decoration: none;
+}
 
 .terceira-secao h2 {
     color: var(--dark-blue);
@@ -203,6 +220,7 @@ header nav a {
 }
 
 @media(min-width: 1110px) {
+
     main {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
@@ -227,5 +245,43 @@ header nav a {
        line-height: 1.625rem;
        text-decoration: none;
        color: var(--gunmetal);
+    }
+
+    header .desktop a:hover {
+        color: var(--vermillion);
+    }
+
+
+
+      main {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 1.75rem;
+    }
+
+    .primeira-secao {
+        grid-column: 1 / 3;
+
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.75rem;
+    }
+
+    .primeira-secao picture {
+        grid-column:  1 / 3;
+    }
+
+    .primeira-secao img {
+        margin: 0;
+
+    }
+
+    .primeira-secao h1 {
+        font-size: 3.5rem;
+    }
+    
+    .primeira-secao button:hover {
+        background-color: var(--dark-blue);
+        cursor: pointer;
     }
 }
